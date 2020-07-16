@@ -1,0 +1,39 @@
+
+
+.menuBar{
+  width: 100%;
+  background: #1d2c53;
+  font-size: 14px;
+  font-weight: 700;
+  color: #8ea5bf;
+  // 常亮
+  .menuBar_list{
+    padding: 0 10px;
+    display: inline-block;
+    border-right: 1px solid #42598b;
+    cursor:pointer;
+    -moz-user-select:none; /*火狐*/
+    -webkit-user-select:none; /*webkit浏览器*/
+    -ms-user-select:none; /*IE10*/
+    -khtml-user-select:none; /*早期浏览器*/
+    user-select:none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  // 高亮
+  .menuBar_list_action{
+    border-radius: 4px 4px 0 0;
+    background: #42598b;
+    color: #d8dfeb;
+  }
+
+  // 不可点击
+  .menuBar_list_not{
+    cursor: not-allowed;
+  }
+}
