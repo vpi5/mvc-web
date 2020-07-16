@@ -1,0 +1,12 @@
+/*!
+ * 
+ *             TODO Author : 李小小
+ * 
+ *             TODO e-mail : lixiaosong59@163.com
+ * 
+ *             TODO Date : 2020-7-16
+ * 
+ *             TODO Purpose : DOM插件
+ *         
+ */
+.menuBar{width:100%;background:#1d2c53;font-size:14px;font-weight:700;color:#8ea5bf}.menuBar .menuBar_list{padding:0 10px;display:inline-block;border-right:1px solid #42598b;cursor:pointer;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.menuBar .menuBar_list_action{border-radius:4px 4px 0 0;background:#42598b;color:#d8dfeb}.menuBar .menuBar_list_not{cursor:not-allowed}body{font-family:HiraginoSansGB W6}.navigation{width:100%;background:#1d2c53;font-size:14px;font-weight:700;position:relative;color:#d8dfeb;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.navigation .navigation_text{position:absolute;padding-left:5px;top:0;left:0}.navigation .navigation_btn{position:absolute;padding-right:5px;top:0;right:0;cursor:pointer}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <title>plugIn JS-SDK</title>
+    <link rel="stylesheet" href="./com.plugIn.css">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #app, #app1{
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="app"></div>
+<div id="app1"></div>
+</body>
+</html>
+<!--<script src="https://lib.baomitu.com/vConsole/3.3.4/vconsole.min.js"></script>
+<script>
+    new VConsole();
+</script>-->
+<script src="./com.plugIn.js"></script>
+<script>
+    plugIn.Render.MenuBar(document.getElementById('app'), {
+        menuArr : [
+            {
+                zn_name : '菜单1',
+                key : 'one',
+            },{
+                zn_name : '菜单2',
+                key : 'two',
+            },{
+                zn_name : '菜单3',
+                key : 'three',
+            },
+        ],
+        menuAction : 'one',
+        forbidClick : ['three'],
+        clickFun :  (item) => {
+            console.log(item, '当前 item 已更新');
+        }
+    });
+
+    plugIn.Render.Navigation(document.getElementById('app1'), {
+        text : '1',
+        btnHTML : '<span onclick="func()">111</span>'
+    });
+
+    function func() {
+        alert(0)
+    }
+</script>
+
