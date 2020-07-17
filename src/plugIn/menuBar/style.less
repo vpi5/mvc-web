@@ -1,13 +1,17 @@
 
-
-.menuBar{
+/* PC */
+.menuBar_PC{
   width: 100%;
   background: #1d2c53;
   font-size: 14px;
   font-weight: 700;
   color: #8ea5bf;
-  // 常亮
-  .menuBar_list{
+  height: 28px;
+  line-height: 28px;
+  border-bottom: 1px solid #1a2647;
+
+  /* 常亮 */
+  .menuBar_list_PC{
     padding: 0 10px;
     display: inline-block;
     border-right: 1px solid #42598b;
@@ -25,15 +29,50 @@
     user-select: none;
   }
 
-  // 高亮
-  .menuBar_list_action{
+  /* 高亮 */
+  .menuBar_list_action_PC{
     border-radius: 4px 4px 0 0;
     background: #42598b;
     color: #d8dfeb;
   }
 
-  // 不可点击
-  .menuBar_list_not{
+  /* 不可点击 */
+  .menuBar_list_not_PC{
     cursor: not-allowed;
+    color: #848484;
+  }
+}
+
+/* Mobile */
+.menuBar_Mobile{
+  width: 100%;
+  padding: 0 10px;
+  height: 38px;
+  line-height: 38px;
+  background: #e73b47;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+
+  /* list 常亮 */
+  .menuBar_Mobile_list{
+    flex: 1;
+    text-align: center;
+    color: #fad7d5;
+
+    .menuBar_Mobile_list_span{
+      color: #fad7d5;
+    }
+
+    /* 高亮 */
+    .menuBar_Mobile_list_span_active{
+      border-bottom: 1px solid #FFFFFF;
+      display: inline-table;
+    }
+
+    /* 禁止点击 */
+    .menuBar_Mobile_list_span_not{
+      color: #a09b9b;
+    }
   }
 }
