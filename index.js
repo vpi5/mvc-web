@@ -1,6 +1,6 @@
 import {React, ReactDom} from './src/utils/react';
 
-const M = require(`./startUpConfig/${pageEnv}.js`);
+const M = require(`./startUpConfig/${pageEnv}.js`).default;
 const {guid} = require('./src/utils/uuid');
 
 
@@ -22,9 +22,9 @@ class Render_Fun {
         }
         // 清空渲染
         ReactDom.render(
-            <DefaultModule/>,
+        <DefaultModule/>,
             dom,
-        );
+    );
         // 清除 dom 缓存
         let position = this.domArr_$.indexOf(dom);
         if(position !== -1){
@@ -39,6 +39,10 @@ Render_Fun.prototype.domArr_$ = [];
 // 初始化 赋值 原型
 Render_Fun.prototype.handleInit_$ = function (object) {
     for(let item in object){
+        if(typeof object[item] !== 'function'){
+            console.error(`${item}：不是一个函数类！`);
+            continue;
+        }
         this[item] = (dom, option = null) => {
             if (option === null){
                 console.error('option 配置不存在！');
@@ -47,14 +51,14 @@ Render_Fun.prototype.handleInit_$ = function (object) {
             // 记录 key 值
             dom.setAttribute('plugin-key', guid());
             // 查找当前 组件 并 渲染
-            let Comp = M[item];
+            let Comp = object[item];
             ReactDom.render(
-                <Comp
-                    dom={dom}
-                    option={option}
-                />,
-                dom,
-            );
+            <Comp
+            dom={dom}
+            option={option}
+            />,
+            dom,
+        );
             // 记录当前 dom 元素
             this.handleRenderPush_$(dom);
         };
@@ -75,9 +79,9 @@ Render_Fun.prototype.close_all_$ = function () {
     for (let i=0;i<domArr_$.length;i++){
         // 清空渲染
         ReactDom.render(
-            <DefaultModule/>,
+        <DefaultModule/>,
             domArr_$[i],
-        );
+    );
     }
     this.domArr_$ = [];
 };

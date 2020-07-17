@@ -10,6 +10,7 @@
 .
 ├── startUpConfig
 │   ├── ALL  ## 全量导出
+│   ├── TEST  ## 测试部分导出
 │
 ├── END！         
 ```

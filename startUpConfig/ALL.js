@@ -1,7 +1,5 @@
-import MenuBar from '../src/plugIn/menuBar';
-import Navigation from "../src/plugIn/navigation";
+import {components} from '../src/plugIn';
 
-export {
-    MenuBar,
-    Navigation
+export default {
+    ...components
 }
